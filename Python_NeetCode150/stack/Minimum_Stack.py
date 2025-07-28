@@ -12,14 +12,25 @@
 # minStack.top();    // return 2
 # minStack.getMin(); // return 1
 
-class MinStack:                                                #定義一個類別（Class）叫做 MinStack
-                                                                        #之後會建立這個類別的物件來操作 Stack，例如：s = MinStack()。
-    def __init__(self):                                          #__init__ 是 Python 中的「建構子（constructor）
-                                                                        #當你寫 MinStack() 時，這個函數會自動被呼叫，用來初始化這個類別的屬性。
-                                                                        #self 是 Python 中代表「這個類別的實體（instance）」的變數。
-        self.stack = []                                           #是在 MinStack 這個類別裡定義「這個物件有一個 stack 屬性，初始值是空的 list」
-                                                                        #ex:  s = MinStack(), self指的就是s這個物件, 所以self.stack = s.stack
-        self.min_stack = []                                    #同步記錄最小值, 因為要O(1)
+"""
+    定義一個類別 MinStack
+    建立這個類別的物件後，可以操作 push/pop/top/getMin
+    ex: s = MinStack()
+"""                                     
+class MinStack:                              
+    """
+        __init__ 是 Python 中的建構子(constructor)
+        當你寫 MinStack() 時，這個函數會自動被呼叫，用來初始化這個類別的屬性。
+        self 是 Python 中代表「這個類別的實體(instance)」的變數。
+    """
+    def __init__(self):                                          
+        """
+            是在 MinStack 這個類別裡定義「這個物件有一個 stack 屬性，初始值是空的 list」
+            ex:  s = MinStack(), self指的就是s這個物件, 所以self.stack = s.stack
+        """                                                           
+        self.stack = []                             
+        #同步記錄最小值, 因為要O(1)
+        self.min_stack = []                                    
     def push(self, val: int) -> None:
         self.stack.append(val)
         #如果 min_stack是空的, 或val比目前最小還小, 加入min_stack
