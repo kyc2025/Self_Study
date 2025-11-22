@@ -1,4 +1,8 @@
-#brutal force method
+#brutal force method is the O(1)
+#optimal and fastest possible solution because:
+#You visit each cell exactly once
+#Each validation (row/col/box) uses O(1) hash-set checks
+#No extra nested scanning is required
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         #set 3 data structure to record
